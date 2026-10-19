@@ -1,0 +1,345 @@
+{
+  "status": "complete",
+  "started_utc": "2026-10-19T08:39:08.871020+00:00",
+  "command": [
+    "python",
+    "-m",
+    "experiments.run_experiments"
+  ],
+  "arguments": {
+    "output_dir": "evidence",
+    "image_ids": null,
+    "limit": null,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "max_dimension": 512,
+    "region_size": 32,
+    "downsample_factor": 4,
+    "blur_sigma": 1.0,
+    "no_ablations": false,
+    "independent_budgets": false,
+    "dpi": 180
+  },
+  "versions": {
+    "python": "3.12.14",
+    "lunalens": "0.1.0",
+    "numpy": "2.3.5",
+    "scipy": "1.16.3",
+    "scikit-image": "0.26.0",
+    "matplotlib": "3.11.2",
+    "pandas": "2.3.3",
+    "Pillow": "12.3.0",
+    "streamlit": "1.66.0",
+    "plotly": "6.9.0"
+  },
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "source_sha256": {
+    "src/__init__.py": "55c141e98d6835e649f7a801e0b77ad702c1a7e4b9313e987a256f0c06cc19bf",
+    "src/custom_strategy.py": "e64f29fc3618ebcb2a41f7fcb895414ac70e2603b30c0b853ba0c24d36ddd107",
+    "src/evaluation.py": "f2e5fc3ffc379ae3c430d75288eb0557ead34fa5457324fcebe95ef63c8b1c23",
+    "src/feature_extraction.py": "d8c657df14cd6a0e07469bbdaf277e30d4ec983912530d01c09009b41699c1d0",
+    "src/image_loader.py": "7f705aca609c066f648e73e1c8716828bd19a1615912db07b1f8f42983f0fd35",
+    "src/observation_planner.py": "cceaddb33ab76aaec9591a9a5772cf96ec21bdb456f291394eb548da67071d43",
+    "src/preprocessing.py": "5dc2e56221bdeea84b17642ff314a7585ee46c0b3aad7fede21b2aae138977b7",
+    "src/segmentation.py": "3225ed1fa3ca2da0cee444a3adfe207d403ea8c5cef5d105fb1b1176d6ae4497",
+    "src/simulator.py": "76fda6cc2aae2f556666643fd601d762aa07650c983b20fe61dea0c6ca03bd86",
+    "src/synthetic.py": "ba79529ade1a6902a96ba4403a3242585b6e54b7d90fb68c1d3b3d1ea75c6406",
+    "src/visualisation.py": "c1c62ac94fa13601a8b8c1d34166df76420747d8b72d556f0871d17cab925abc",
+    "experiments/__init__.py": "af5c2627952f10db2d3de2d7bfeb5a9dbe925ababfd355925ecd8489ce991ce5",
+    "experiments/compare_algorithms.py": "db0601f83edf36edbae3f624e96947c0e2421b210f16528c1980cf7a6b34193b",
+    "experiments/diagnose_scores.py": "71161eb52db8261bbe8d69c27fc380bc81205bc46a01d56a5123134ff5b7460c",
+    "experiments/prepare_data.py": "04988cb7704907c42a97e84d48fcd11eba4b927df3809e4b48389e6e5d39926c",
+    "experiments/run_experiments.py": "b3ad258b90b3308c76c86dfee713164e74f5ce0fdd62ed48dc6ad6583b149779",
+    "requirements.txt": "0809a5ac4d378e0bcfb8a75aa04868572f8975d75ac95cd23f9337951823785b",
+    "requirements-lock.txt": "2afff8c107eea251a9d4829e24c9c945b0a9d1c4faf3f509d11f9060643c469f",
+    "pyproject.toml": "03b21db763bac361283f8e185475a1e10b7d200a032164d63c41056a4921f1e0"
+  },
+  "default_weights_fixed_before_results": {
+    "variance": 0.1,
+    "edge_density": 0.15,
+    "gradient": 0.15,
+    "texture": 0.2,
+    "entropy": 0.15,
+    "contrast": 0.1,
+    "information": 0.15
+  },
+  "custom_coefficients_fixed_before_results": {
+    "utility_weight": 0.6,
+    "novelty_weight": 0.25,
+    "spatial_weight": 0.15
+  },
+  "strategies": [
+    "random",
+    "systematic",
+    "feature",
+    "custom"
+  ],
+  "random_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "deterministic_runs_per_image_per_strategy": 1,
+  "budget_fractions": [
+    0.0,
+    0.1,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "cost_mode": "uniform",
+  "endpoint_evaluation": "Prefixes of full scans; equivalence to independently capped runs tested for all four current policies.",
+  "curve_interpretation": "Full-scan trajectories, not independently replanned curves. Future policies whose priorities depend on remaining_budget require --independent-budgets for valid endpoint comparisons.",
+  "aggregation": "Average seeds within each image, then average image-level means equally within real or synthetic kind. SD in kind tables is sample SD across image means; it is not a confidence interval.",
+  "nonfinite_metrics": "CSV uses inf/nan. Strict JSON uses null: PSNR at zero MSE is +infinity; SSIM only undefined for images narrower than 3 pixels. SD is null when fewer than 2 samples or values nonfinite.",
+  "hypothesis": "Feature utility and descriptor/spatial diversity may improve early map reconstruction; results are measured, and no weights are tuned on benchmark outcomes.",
+  "ablation": "At 25% budget, drop each feature's weight to zero while retaining the other preset weights. Deterministic, one run per image per feature, no tuning.",
+  "inputs": [
+    {
+      "id": "lro_mare_australe",
+      "name": "LRO \u2014 Bouldery crater near Mare Australe",
+      "kind": "real",
+      "source_url": "https://science.nasa.gov/photojournal/bouldery-crater-near-mare-australe/",
+      "download_url": "https://assets.science.nasa.gov/dynamicimage/assets/science/psd/photojournal/pia/pia14/pia14421/PIA14421.jpg?crop=faces%2Cfocalpoint&fit=clip&h=1000&w=1000",
+      "source_file": "PIA14421.jpg",
+      "product_id": "PIA14421",
+      "nac_frame": "M150062296R",
+      "mission": "Lunar Reconnaissance Orbiter (LRO)",
+      "instrument": "Lunar Reconnaissance Orbiter Camera \u2014 Narrow Angle Camera (LROC NAC)",
+      "credit": "NASA/GSFC/Arizona State University",
+      "source_publication_date": "2011-04-13",
+      "description": "Published LROC image of a boulder-rich crater. A fixed central 512-pixel crop is used, selected before running comparisons.",
+      "path": "data/sample_images/lro_mare_australe.png",
+      "source_path": "source_images/PIA14421.jpg",
+      "source_sha256": "ce872c5983e7462adc913bd15c967589c291d89c8c48e9cc81a699bc532aedeb",
+      "sha256": "b6c44ca882e7bc74463edf75b9119ca5264e035e1d349e8ba0d2b371dfc8063e",
+      "retrieved_at_utc": "2026-10-19T08:16:38.773278+00:00",
+      "original_shape": [
+        1000,
+        1000
+      ],
+      "shape": [
+        512,
+        512
+      ],
+      "crop_xywh": [
+        244,
+        244,
+        512,
+        512
+      ],
+      "processing": "Decode published JPEG; fixed center crop; Rec.709 grayscale if RGB; uint8 PNG. No scientific calibration or georeferencing.",
+      "data_level": "Public outreach image derivative, not calibrated PDS product",
+      "file_sha256": "b6c44ca882e7bc74463edf75b9119ca5264e035e1d349e8ba0d2b371dfc8063e",
+      "decoded_array_sha256": "622951f62b90bb8dee5c8ff18eae5fbba8eb3a6d9e6031cc81d94f96e054eab4",
+      "initial_map_sha256": "3ca98eb5c4778b2df2ac4d36bab7fccc4badfe73e5f36c353600d184882be4ca",
+      "region_count": 256,
+      "full_observation_cost": 256.0,
+      "initial_metrics": {
+        "mae": 0.06677260249394923,
+        "mse": 0.015242756686808578,
+        "psnr": 18.16936482759977,
+        "ssim": 0.5970945651292302
+      }
+    },
+    {
+      "id": "lro_giordano_bruno",
+      "name": "LRO \u2014 Giordano Bruno impact melt",
+      "kind": "real",
+      "source_url": "https://science.nasa.gov/photojournal/impact-melt-flows-on-giordano-bruno/",
+      "download_url": "https://assets.science.nasa.gov/dynamicimage/assets/science/psd/photojournal/pia/pia12/pia12932/PIA12932.jpg?crop=faces%2Cfocalpoint&fit=clip&h=1000&w=1000",
+      "source_file": "PIA12932.jpg",
+      "product_id": "PIA12932",
+      "mission": "Lunar Reconnaissance Orbiter (LRO)",
+      "instrument": "Lunar Reconnaissance Orbiter Camera \u2014 Narrow Angle Camera (LROC NAC)",
+      "credit": "NASA/GSFC/Arizona State University",
+      "source_publication_date": "2009-12-15",
+      "description": "Published LROC view of frozen impact melt. A fixed central 512-pixel crop is used, selected before running comparisons.",
+      "path": "data/sample_images/lro_giordano_bruno.png",
+      "source_path": "source_images/PIA12932.jpg",
+      "source_sha256": "9b3b2b86b903c2255ded1e4db984f930e5d12ae3e872121d92debb9aeb49814e",
+      "sha256": "b8a3497151779cf87fd14ad13bf38e1c7af63e7de87c7f1ff868f18c1aa5c5a2",
+      "retrieved_at_utc": "2026-10-19T08:16:39.049310+00:00",
+      "original_shape": [
+        1000,
+        1000
+      ],
+      "shape": [
+        512,
+        512
+      ],
+      "crop_xywh": [
+        244,
+        244,
+        512,
+        512
+      ],
+      "processing": "Decode published JPEG; fixed center crop; Rec.709 grayscale if RGB; uint8 PNG. No scientific calibration or georeferencing.",
+      "data_level": "Public outreach image derivative, not calibrated PDS product",
+      "file_sha256": "b8a3497151779cf87fd14ad13bf38e1c7af63e7de87c7f1ff868f18c1aa5c5a2",
+      "decoded_array_sha256": "7bc61c9506df23979640e7397b60bf3e01ea6f92c5e31c412207f5ed23543c85",
+      "initial_map_sha256": "e7ffc014c23189d17109c29aa1dbe54a56b214355467469d9d056232db169585",
+      "region_count": 256,
+      "full_observation_cost": 256.0,
+      "initial_metrics": {
+        "mae": 0.017065405795218425,
+        "mse": 0.0005974911587218387,
+        "psnr": 32.2366851673418,
+        "ssim": 0.8012791035581149
+      }
+    },
+    {
+      "id": "lro_tycho_floor",
+      "name": "LRO \u2014 The floor of Tycho",
+      "kind": "real",
+      "source_url": "https://science.nasa.gov/photojournal/the-floor-of-tycho/",
+      "download_url": "https://assets.science.nasa.gov/dynamicimage/assets/science/psd/photojournal/pia/pia12/pia12941/PIA12941.jpg?crop=faces%2Cfocalpoint&fit=clip&h=1000&w=1000",
+      "source_file": "PIA12941.jpg",
+      "product_id": "PIA12941",
+      "mission": "Lunar Reconnaissance Orbiter (LRO)",
+      "instrument": "Lunar Reconnaissance Orbiter Camera \u2014 Narrow Angle Camera (LROC NAC)",
+      "credit": "NASA/GSFC/Arizona State University",
+      "source_publication_date": "2010-01-14",
+      "description": "Published LROC view of boulders and impact melt. A fixed central 512-pixel crop is used, selected before running comparisons.",
+      "path": "data/sample_images/lro_tycho_floor.png",
+      "source_path": "source_images/PIA12941.jpg",
+      "source_sha256": "c1b8537b9bfc485fe0975effb71fbb5acb060f00bc632ae9e1904351273d7fb3",
+      "sha256": "8269ee865044df271c737d8af2c56aba8af83ac33f97a75e9d92430bb3319827",
+      "retrieved_at_utc": "2026-10-19T08:16:39.513282+00:00",
+      "original_shape": [
+        1000,
+        1000
+      ],
+      "shape": [
+        512,
+        512
+      ],
+      "crop_xywh": [
+        244,
+        244,
+        512,
+        512
+      ],
+      "processing": "Decode published JPEG; fixed center crop; Rec.709 grayscale if RGB; uint8 PNG. No scientific calibration or georeferencing.",
+      "data_level": "Public outreach image derivative, not calibrated PDS product",
+      "file_sha256": "8269ee865044df271c737d8af2c56aba8af83ac33f97a75e9d92430bb3319827",
+      "decoded_array_sha256": "64104f54abf30816a31a1c86441a76dca05e7d58bae50d8d43be371fac741653",
+      "initial_map_sha256": "0d4ca9898e47468cb5978851e316d028af12121fd7c9d33f22b98c42afbe3d41",
+      "region_count": 256,
+      "full_observation_cost": 256.0,
+      "initial_metrics": {
+        "mae": 0.024722301448811584,
+        "mse": 0.0016863227296047415,
+        "psnr": 27.73059306180018,
+        "ssim": 0.7434315510292279
+      }
+    },
+    {
+      "id": "synthetic_mixed",
+      "name": "SYNTHETIC \u2014 mixed",
+      "kind": "synthetic",
+      "path": "data/sample_images/synthetic_mixed.png",
+      "source_url": "",
+      "mission": "None \u2014 procedural software fixture",
+      "instrument": "None",
+      "credit": "LunaLens procedural generator (AI-assisted foundation)",
+      "seed": 11,
+      "style": "mixed",
+      "shape": [
+        512,
+        512
+      ],
+      "sha256": "3aada05f89db2d4bd643aa8ca45411c05dee6724dccdbb20713d921e9276a9a2",
+      "generator": "src/synthetic.py:generate_terrain",
+      "processing": "Procedural texture -> fixed [0,1] to uint8 PNG.",
+      "description": "Procedural lunar-like texture. Not NASA imagery, physical elevation, or calibrated lunar radiometry.",
+      "file_sha256": "3aada05f89db2d4bd643aa8ca45411c05dee6724dccdbb20713d921e9276a9a2",
+      "decoded_array_sha256": "9efb923cffc1bf6bd319fe0a14e23e9ce416445d5c7e00ee4d5cd44a6f706fc7",
+      "initial_map_sha256": "8748ae745f2f34daa79fe83423f69d99c9fc39f4e606832b391f672a29c56b8a",
+      "region_count": 256,
+      "full_observation_cost": 256.0,
+      "initial_metrics": {
+        "mae": 0.009220391853716592,
+        "mse": 0.000193601575263298,
+        "psnr": 37.13091113322178,
+        "ssim": 0.9186394349984067
+      }
+    },
+    {
+      "id": "synthetic_rugged",
+      "name": "SYNTHETIC \u2014 rugged",
+      "kind": "synthetic",
+      "path": "data/sample_images/synthetic_rugged.png",
+      "source_url": "",
+      "mission": "None \u2014 procedural software fixture",
+      "instrument": "None",
+      "credit": "LunaLens procedural generator (AI-assisted foundation)",
+      "seed": 29,
+      "style": "rugged",
+      "shape": [
+        512,
+        512
+      ],
+      "sha256": "5a1ea9d7ffa95345d42859a43b0904f76be057ffc4403a107dd942488ea4ee80",
+      "generator": "src/synthetic.py:generate_terrain",
+      "processing": "Procedural texture -> fixed [0,1] to uint8 PNG.",
+      "description": "Procedural lunar-like texture. Not NASA imagery, physical elevation, or calibrated lunar radiometry.",
+      "file_sha256": "5a1ea9d7ffa95345d42859a43b0904f76be057ffc4403a107dd942488ea4ee80",
+      "decoded_array_sha256": "cef2d910e3aad78b6d0004ed26b79deab2638b580a6a7396ef248add5971c8f0",
+      "initial_map_sha256": "70b51fcb7cf6f6e370f6c6b9a691961c055064117e95f181843f6f2143ce7d08",
+      "region_count": 256,
+      "full_observation_cost": 256.0,
+      "initial_metrics": {
+        "mae": 0.012701702974197815,
+        "mse": 0.00031563678407330086,
+        "psnr": 35.008123901611086,
+        "ssim": 0.8883696451770842
+      }
+    },
+    {
+      "id": "synthetic_hidden_detail",
+      "name": "SYNTHETIC \u2014 hidden detail",
+      "kind": "synthetic",
+      "path": "data/sample_images/synthetic_hidden_detail.png",
+      "source_url": "",
+      "mission": "None \u2014 procedural software fixture",
+      "instrument": "None",
+      "credit": "LunaLens procedural generator (AI-assisted foundation)",
+      "seed": 47,
+      "style": "hidden_detail",
+      "shape": [
+        512,
+        512
+      ],
+      "sha256": "976adc8f4a5929864de40480ab12bd15eb55439d1ecc2851ee864c1c27d44b8b",
+      "generator": "src/synthetic.py:generate_terrain",
+      "processing": "Procedural texture -> fixed [0,1] to uint8 PNG.",
+      "description": "Synthetic stress case: high-frequency detail can be invisible to the initial map. Not a realistic lunar terrain model.",
+      "file_sha256": "976adc8f4a5929864de40480ab12bd15eb55439d1ecc2851ee864c1c27d44b8b",
+      "decoded_array_sha256": "e4ab89c19778835dd78ec63a9f58d15e91eeda85e2af89535f7c9d2ba76b4cad",
+      "initial_map_sha256": "6a496eca19bb8255ecb475167f03f498f50cf882d7fb12bfbbba853038bca7d1",
+      "region_count": 256,
+      "full_observation_cost": 256.0,
+      "initial_metrics": {
+        "mae": 0.08441370020932482,
+        "mse": 0.01454994289147326,
+        "psnr": 18.37138711280597,
+        "ssim": 0.535242407364445
+      }
+    }
+  ],
+  "completed_utc": "2026-10-19T08:44:08.278353+00:00",
+  "elapsed_seconds": 299.40752208699996,
+  "baseline_runs": 48,
+  "ablation_runs": 42,
+  "independent_endpoint_runs": 0,
+  "history_rows": 12336
+}

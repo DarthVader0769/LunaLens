@@ -1,0 +1,101 @@
+{
+  "verified_utc": "2026-10-19T08:45:05.724132+00:00",
+  "run_status": "complete",
+  "summary_status": "complete",
+  "elapsed_seconds": 299.40752208699996,
+  "baseline_runs": 48,
+  "ablation_runs": 42,
+  "history_rows": 12336,
+  "full_benchmark_executions_verified": 3,
+  "prior_two_executions_confirmed_identical": true,
+  "numeric_csv_identical_across_three_full_executions": {
+    "summary_by_image.csv": true,
+    "summary_by_kind.csv": true,
+    "ablations_by_image.csv": true,
+    "ablations_by_kind.csv": true,
+    "selection_history.csv": true,
+    "history.csv": true,
+    "score_error_correlations.csv": true
+  },
+  "numeric_csv_reference_sha256": {
+    "summary_by_image.csv": "05be975d7c57421856d9975fc10493dfaa92f4a7b595d56836fc2361400eeb42",
+    "summary_by_kind.csv": "81ef372d11327ff9d72502811c0df9fcc1e9926e7ac7b6441be710ee9af42a45",
+    "ablations_by_image.csv": "8ac2d234e78158a9ae450a8883832d3813f26780ec015e8c2f22e6c26b2e29bf",
+    "ablations_by_kind.csv": "3fff2d5c5935561df0158d1bfa5d0fca7aab596ef88f2755f16f7e9dad9b1ee9",
+    "selection_history.csv": "fb506d9cc9a55699965afec03c72ef31e42b3832cd6a3c307fa4b5afefcffcac",
+    "history.csv": "b80fc47ecbc1a97c06daf10705e8b17d4b5e1e0063de21e128c373bcf4e890c5",
+    "score_error_correlations.csv": "c6256e9e824ed842648c81883b7ad02336bf6593088d8ae0b636c769f2b7356f"
+  },
+  "all_numeric_csv_identical": true,
+  "repeated_execution_is_reproducibility_check_not_additional_independent_samples": true,
+  "source_hashes_match_current_delivered_files": {
+    "src/__init__.py": true,
+    "src/custom_strategy.py": true,
+    "src/evaluation.py": true,
+    "src/feature_extraction.py": true,
+    "src/image_loader.py": true,
+    "src/observation_planner.py": true,
+    "src/preprocessing.py": true,
+    "src/segmentation.py": true,
+    "src/simulator.py": true,
+    "src/synthetic.py": true,
+    "src/visualisation.py": true,
+    "experiments/__init__.py": true,
+    "experiments/compare_algorithms.py": true,
+    "experiments/diagnose_scores.py": true,
+    "experiments/prepare_data.py": true,
+    "experiments/run_experiments.py": true,
+    "requirements.txt": true,
+    "requirements-lock.txt": true,
+    "pyproject.toml": true
+  },
+  "all_source_hashes_match": true,
+  "contourpy_imported_version": "1.3.3",
+  "contourpy_distribution_version": "1.3.3",
+  "figure_dimensions_pixels": {
+    "figures/01_original_and_degraded.png": [
+      1764,
+      956
+    ],
+    "figures/02_observation_segmentation.png": [
+      1277,
+      1370
+    ],
+    "figures/03_information_heatmap.png": [
+      1399,
+      1280
+    ],
+    "figures/04_observation_priorities.png": [
+      1399,
+      1280
+    ],
+    "figures/05_selected_observation_regions.png": [
+      1976,
+      2000
+    ],
+    "figures/06_reconstructed_maps.png": [
+      2687,
+      1892
+    ],
+    "figures/07_error_vs_budget.png": [
+      2252,
+      974
+    ],
+    "figures/08_measured_metrics_table.png": [
+      2540,
+      1064
+    ],
+    "figures/09_feature_drop_ablation.png": [
+      2090,
+      1064
+    ],
+    "figures/10_improvement_vs_observation_count.png": [
+      2252,
+      974
+    ],
+    "figures/11_gain_per_observation.png": [
+      2252,
+      974
+    ]
+  }
+}

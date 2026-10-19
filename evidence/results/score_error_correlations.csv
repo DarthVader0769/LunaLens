@@ -1,0 +1,7 @@
+image_id,kind,spearman_score_vs_true_tile_mse
+lro_mare_australe,real,0.958138303959716
+lro_giordano_bruno,real,0.6211983577477682
+lro_tycho_floor,real,0.8134312771801326
+synthetic_mixed,synthetic,0.8549811169604028
+synthetic_rugged,synthetic,0.8202384699015792
+synthetic_hidden_detail,synthetic,-0.6316425408647275

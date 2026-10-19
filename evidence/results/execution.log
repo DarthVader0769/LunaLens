@@ -1,0 +1,63 @@
+[1/6] lro_mare_australe (real), (512, 512), 256 regions
+  random     seed=0 · full scan verified
+  random     seed=1 · full scan verified
+  random     seed=2 · full scan verified
+  random     seed=3 · full scan verified
+  random     seed=4 · full scan verified
+  systematic seed=deterministic · full scan verified
+  feature    seed=deterministic · full scan verified
+  custom     seed=deterministic · full scan verified
+  Feature-drop ablations complete (7 features; fixed weights)
+[2/6] lro_giordano_bruno (real), (512, 512), 256 regions
+  random     seed=0 · full scan verified
+  random     seed=1 · full scan verified
+  random     seed=2 · full scan verified
+  random     seed=3 · full scan verified
+  random     seed=4 · full scan verified
+  systematic seed=deterministic · full scan verified
+  feature    seed=deterministic · full scan verified
+  custom     seed=deterministic · full scan verified
+  Feature-drop ablations complete (7 features; fixed weights)
+[3/6] lro_tycho_floor (real), (512, 512), 256 regions
+  random     seed=0 · full scan verified
+  random     seed=1 · full scan verified
+  random     seed=2 · full scan verified
+  random     seed=3 · full scan verified
+  random     seed=4 · full scan verified
+  systematic seed=deterministic · full scan verified
+  feature    seed=deterministic · full scan verified
+  custom     seed=deterministic · full scan verified
+  Feature-drop ablations complete (7 features; fixed weights)
+[4/6] synthetic_mixed (synthetic), (512, 512), 256 regions
+  random     seed=0 · full scan verified
+  random     seed=1 · full scan verified
+  random     seed=2 · full scan verified
+  random     seed=3 · full scan verified
+  random     seed=4 · full scan verified
+  systematic seed=deterministic · full scan verified
+  feature    seed=deterministic · full scan verified
+  custom     seed=deterministic · full scan verified
+  Feature-drop ablations complete (7 features; fixed weights)
+[5/6] synthetic_rugged (synthetic), (512, 512), 256 regions
+  random     seed=0 · full scan verified
+  random     seed=1 · full scan verified
+  random     seed=2 · full scan verified
+  random     seed=3 · full scan verified
+  random     seed=4 · full scan verified
+  systematic seed=deterministic · full scan verified
+  feature    seed=deterministic · full scan verified
+  custom     seed=deterministic · full scan verified
+  Feature-drop ablations complete (7 features; fixed weights)
+[6/6] synthetic_hidden_detail (synthetic), (512, 512), 256 regions
+  random     seed=0 · full scan verified
+  random     seed=1 · full scan verified
+  random     seed=2 · full scan verified
+  random     seed=3 · full scan verified
+  random     seed=4 · full scan verified
+  systematic seed=deterministic · full scan verified
+  feature    seed=deterministic · full scan verified
+  custom     seed=deterministic · full scan verified
+  Feature-drop ablations complete (7 features; fixed weights)
+Completed 48 baseline + 42 ablation + 0 independent endpoint runs in 299.4s.
+Numeric results: /workspace/scratch/fc230989ffca/LunaLens/evidence/results
+Figures: /workspace/scratch/fc230989ffca/LunaLens/evidence/figures

@@ -1,0 +1,25 @@
+{
+  "command": [
+    "/workspace/scratch/fc230989ffca/clean_install/.venv/bin/python",
+    "-m",
+    "streamlit",
+    "run",
+    "app.py",
+    "--server.headless=true",
+    "--server.address=127.0.0.1",
+    "--server.port=57729",
+    "--browser.gatherUsageStats=false"
+  ],
+  "health": {
+    "status": 200,
+    "body": "ok"
+  },
+  "homepage": {
+    "status": 200,
+    "html_bytes": 6467,
+    "contains_streamlit": true
+  },
+  "startup_seconds": 0.7595497499996782,
+  "process_stopped_after_check": true,
+  "visual_browser_test": false
+}

@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/workspace/scratch/fc230989ffca/clean_install/.venv/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "--junitxml=/workspace/scratch/fc230989ffca/LunaLens/evidence/results/pytest_results.xml"
+  ],
+  "working_directory": "/workspace/scratch/fc230989ffca/clean_install/LunaLens",
+  "exit_code": 0,
+  "elapsed_seconds": 24.599427064999873,
+  "independent_copy": true,
+  "requirements_lock_sha256": "2afff8c107eea251a9d4829e24c9c945b0a9d1c4faf3f509d11f9060643c469f"
+}

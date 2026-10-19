@@ -1,0 +1,28 @@
+Command: /workspace/scratch/fc230989ffca/clean_install/.venv/bin/python -m experiments.prepare_data
+Prepared lro_mare_australe: 1000x1000 -> 512x512, SHA256 b6c44ca882e7
+Prepared lro_giordano_bruno: 1000x1000 -> 512x512, SHA256 b8a349715177
+Prepared lro_tycho_floor: 1000x1000 -> 512x512, SHA256 8269ee865044
+Prepared synthetic_mixed: seed=11
+Prepared synthetic_rugged: seed=29
+Prepared synthetic_hidden_detail: seed=47
+
+Command: /workspace/scratch/fc230989ffca/clean_install/.venv/bin/python -m experiments.run_experiments --limit 1 --max-dimension 128 --seeds 0 1 --dpi 100 --output-dir evidence/smoke
+[1/1] lro_mare_australe (real), (128, 128), 16 regions
+  random     seed=0 · full scan verified
+  random     seed=1 · full scan verified
+  systematic seed=deterministic · full scan verified
+  feature    seed=deterministic · full scan verified
+  custom     seed=deterministic · full scan verified
+  Feature-drop ablations complete (7 features; fixed weights)
+Completed 5 baseline + 7 ablation + 0 independent endpoint runs in 2.0s.
+Numeric results: /workspace/scratch/fc230989ffca/clean_install/LunaLens/evidence/smoke/results
+Figures: /workspace/scratch/fc230989ffca/clean_install/LunaLens/evidence/smoke/figures
+
+Command: /workspace/scratch/fc230989ffca/clean_install/.venv/bin/python -m experiments.compare_algorithms --results evidence/smoke/results
+Measured comparison at 25% budget; random seeds averaged within image, then equal image means.
+kind       method       images         MSE     SSIM   MSE gain
+real       random            1   0.0036352   0.7650     30.08%
+real       systematic        1   0.0039450   0.7412     24.12%
+real       feature           1   0.0023124   0.8017     55.52%
+real       custom            1   0.0023124   0.8017     55.52%
+
