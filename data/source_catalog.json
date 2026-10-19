@@ -1,0 +1,47 @@
+{
+  "sources": [
+    {
+      "id": "lro_mare_australe",
+      "name": "LRO — Bouldery crater near Mare Australe",
+      "kind": "real",
+      "source_url": "https://science.nasa.gov/photojournal/bouldery-crater-near-mare-australe/",
+      "download_url": "https://assets.science.nasa.gov/dynamicimage/assets/science/psd/photojournal/pia/pia14/pia14421/PIA14421.jpg?crop=faces%2Cfocalpoint&fit=clip&h=1000&w=1000",
+      "source_file": "PIA14421.jpg",
+      "product_id": "PIA14421",
+      "nac_frame": "M150062296R",
+      "mission": "Lunar Reconnaissance Orbiter (LRO)",
+      "instrument": "Lunar Reconnaissance Orbiter Camera — Narrow Angle Camera (LROC NAC)",
+      "credit": "NASA/GSFC/Arizona State University",
+      "source_publication_date": "2011-04-13",
+      "description": "Published LROC image of a boulder-rich crater. A fixed central 512-pixel crop is used, selected before running comparisons."
+    },
+    {
+      "id": "lro_giordano_bruno",
+      "name": "LRO — Giordano Bruno impact melt",
+      "kind": "real",
+      "source_url": "https://science.nasa.gov/photojournal/impact-melt-flows-on-giordano-bruno/",
+      "download_url": "https://assets.science.nasa.gov/dynamicimage/assets/science/psd/photojournal/pia/pia12/pia12932/PIA12932.jpg?crop=faces%2Cfocalpoint&fit=clip&h=1000&w=1000",
+      "source_file": "PIA12932.jpg",
+      "product_id": "PIA12932",
+      "mission": "Lunar Reconnaissance Orbiter (LRO)",
+      "instrument": "Lunar Reconnaissance Orbiter Camera — Narrow Angle Camera (LROC NAC)",
+      "credit": "NASA/GSFC/Arizona State University",
+      "source_publication_date": "2009-12-15",
+      "description": "Published LROC view of frozen impact melt. A fixed central 512-pixel crop is used, selected before running comparisons."
+    },
+    {
+      "id": "lro_tycho_floor",
+      "name": "LRO — The floor of Tycho",
+      "kind": "real",
+      "source_url": "https://science.nasa.gov/photojournal/the-floor-of-tycho/",
+      "download_url": "https://assets.science.nasa.gov/dynamicimage/assets/science/psd/photojournal/pia/pia12/pia12941/PIA12941.jpg?crop=faces%2Cfocalpoint&fit=clip&h=1000&w=1000",
+      "source_file": "PIA12941.jpg",
+      "product_id": "PIA12941",
+      "mission": "Lunar Reconnaissance Orbiter (LRO)",
+      "instrument": "Lunar Reconnaissance Orbiter Camera — Narrow Angle Camera (LROC NAC)",
+      "credit": "NASA/GSFC/Arizona State University",
+      "source_publication_date": "2010-01-14",
+      "description": "Published LROC view of boulders and impact melt. A fixed central 512-pixel crop is used, selected before running comparisons."
+    }
+  ]
+}
